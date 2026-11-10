@@ -1,0 +1,8 @@
+# rust
+target/
+# repomix 
+repomix-output.*
+repomix.config.json
+.repomixignore
+# git
+.gitignore

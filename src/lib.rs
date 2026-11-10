@@ -1,29 +1,16 @@
-pub trait Config {
-    const BORDER: Option<u8>;
-    const BORDER_COLOR: Color;
-    const GAPS: Option<u8>;
-    const GAPS_SMART: bool;
-    // TODO: add binding config
-    const BINDING_LIST: &[Binding];
-    // TODO: add output config
-    // const OUTPUT_LIST: &[Output];
-    // TODO: add input config
-    // const INPUT_LIST: &[Input];
-}
+mod binding;
+mod color;
+mod input;
+mod output;
 
-pub struct Color(pub u8, pub u8, pub u8);
-pub struct Binding {
-    pub mods: Key,
-    pub key: Key,
-    pub action: Action,
-}
-pub enum Key {
-    Super = (1 << 0),
-    Alt = (1 << 1),
-    Ctrl = (1 << 2),
-    Shift = (1 << 3),
-}
-pub enum Action {
-    Execute(&'static str),
-    Close,
+pub trait Config {
+    const BORDER: Option<u8> = None;
+    const BORDER_COLOR: color::Color = color::Color(0, 0, 0);
+    const GAPS: Option<u8> = None;
+    const GAPS_SMART: bool = false;
+    const BINDING_LIST: &[binding::Binding] = &[];
+    // TODO: add input config
+    // const INPUT_LIST: &[input::Input];
+    // TODO: add output config
+    // const OUTPUT_LIST: &[output::Output];
 }
