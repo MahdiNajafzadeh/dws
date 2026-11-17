@@ -1,12 +1,14 @@
+#![allow(dead_code)]
+
 pub mod action;
 pub mod binding;
-mod client;
+pub mod client;
 pub mod color;
 pub mod compositor;
 pub mod input;
 pub mod output;
 pub mod startup;
-mod state;
+pub mod state;
 
 pub trait Config {
     const BORDER: Option<u8> = None;

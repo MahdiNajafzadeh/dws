@@ -1,6 +1,8 @@
 # rust
 target/
-# repomix 
+Cargo.lock
+.rustfmt.toml
+# repomix
 repomix-output.*
 repomix.config.json
 .repomixignore

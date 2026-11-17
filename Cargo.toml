@@ -5,9 +5,20 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.104"
-bitflags = "2.13.2"
-smithay = "0.7.0"
 thiserror = "2.0.21"
+bitflags = "2.13.2"
+smithay = { version = "0.7.0", features = [
+    "backend_drm",
+    "backend_gbm",
+    "backend_egl",
+    "backend_udev",
+    "backend_session_libseat",
+    "renderer_gl",
+    "desktop",
+    "wayland_frontend",
+] }
+smithay-drm-extras = { version = "0.1.0", features = ["display-info"] }
+
 
 [[example]]
 name = "simple"
